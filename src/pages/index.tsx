@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import Head from "next/head";
 import { DM_Sans } from "next/font/google";
-import { Menu } from "lucide-react";
-// import { motion } from "framer-motion";
-
-// import styles from "@/styles/Home.module.css";
+import { Menu, SquareChevronDown } from "lucide-react";
 import styles from "@/styles/Home1.module.css";
+
 import image1 from '../../public/image1.jpeg';
+import DateToCare from '../../public/DataToCare.png';
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -49,7 +48,11 @@ export default function Home() {
   const [open, setOpen] = useState(false);
 
   const handleMenu = () => setOpen(true);
-  const handleCloseMenu = () => setOpen(false);
+  const handleCloseMenu = () => {
+    if (open) {
+      setOpen(false);
+    }
+  }
 
   return (
     <>
@@ -60,35 +63,37 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      { /* <motion.div
-          initial={{ y: -5 }}
-          animate={{
-            y: [ null, -5, -50, -5, -30, -5 ],
-            transition: {
-              ease: "easeOut",
-              duration: 2,
-              repeat: Infinity,
-              repeatDelay: 2
-            }
-          }}
-          className={styles.moreContainer}
-        >
-            <MoveDown size={32} absoluteStrokeWidth />
-        </motion.div> */ }
-
-      <section className={`${styles.gridContainer} ${dmSans.className}`}>
+      <section className={`${styles.gridContainer} ${dmSans.className}`} onClick={handleCloseMenu}>
         <header className={styles.header}>
           <p>
             <a href="#">Ak.h</a>
           </p>
-          <div>
-            <button
-              className={`${styles.menu}`}
-              onClick={handleMenu}
-            >
-              <Menu />
-            </button>
-            <nav className={styles.nav}> {/* style={{ display: open ? 'block' : 'none' }} */}
+
+          <button
+            className={`${styles.menu}`}
+            onClick={handleMenu}
+          >
+            <Menu />
+          </button>
+
+          {
+            open && (
+              <div className={styles.mobileNavContainer}>
+
+                <nav className={styles.mobileNav}> 
+                  <ul>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Resume</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </nav>
+              </div>
+            )
+          }
+
+          <div className={styles.navContainer}>
+            <nav className={styles.nav}> 
               <ul>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#">Resume</a></li>
@@ -99,27 +104,63 @@ export default function Home() {
           </div>
         </header>
 
-        {/* <main className={styles.main} onClick={handleCloseMenu} onDragEnd={handleCloseMenu}> */}
-          <div
-            className={`${styles.image}`}
-            style={{
-              backgroundImage: `url(${image1.src})`,
-              backgroundSize: 'cover'
-            }}></div>
+        <div
+          className={`${styles.image}`}
+          onClick={handleCloseMenu}
+          style={{
+            backgroundImage: `url(${image1.src})`,
+            backgroundSize: 'cover'
+          }}></div>
 
-          <p className={`${styles.firstName}`}>Habib</p>
-          <p className={`${styles.middleName}`}>Folorunsho</p>
-          <p className={`${styles.lastName}`}>Akinwale</p>
+        <p className={`${styles.firstName}`}>Habib</p>
+        <p className={`${styles.middleName}`}>Folorunsho</p>
+        <p className={`${styles.lastName}`}>Akinwale</p>
 
-          <p className={`${styles.introduction}`}>
-            I'm a <span><strong>Senior Software Engineer</strong> with experience in backend, web, and hybrid native applications. I have a foundation in ITIL, and i also possess technical project management skills.</span> Previously at <a href="https://www.savics.org" target="_blank">Savics</a>, <a href="https://www.andela.com" target="_blank">Andela</a>, and the <a href="https://www.aun.edu.ng" target="_blank">American University of Nigeria.</a>
-          </p>
+        <p className={`${styles.introduction}`} onClick={handleCloseMenu}>
+          I'm a <span><strong>Senior Software Engineer</strong> with experience in backend, web, and hybrid native applications. I have a foundation in ITIL, and i also possess technical project management skills.</span> Previously at <a href="https://www.savics.org" target="_blank">Savics</a>, <a href="https://www.andela.com" target="_blank">Andela</a>, and the <a href="https://www.aun.edu.ng" target="_blank">American University of Nigeria.</a>
+        </p>
 
-          <div className={`${styles.more}`}>More</div>
-        {/* </main> */}
+        <div className={`${styles.more}`}><SquareChevronDown /></div>
       </section>
 
-      <section className="projects"></section>
+      <section className={`${styles.projects} ${dmSans.className}`}>
+        <div className={`${styles.project} ${styles.long}`}>
+            {/* <h3 className={styles.title}>DataToCare</h3> */}
+            <img
+              src={DateToCare.src}
+              alt="DataToCare product icon"
+              className={styles.projectImage} />
+            <p className={styles.description}>
+              DataToCare is a fully customizable suite of integrated applications that connects national laboratory networks by collecting diagnostic and patient data at the facility level, displaying real-time information on a dashboard to facilitate decision-making at the central level, and notifying test results to medical teams and patients.
+            </p>
+            <a className={styles.action} href="https://datatocare.org" target='_blank'>Visit</a>
+            
+        </div>
+
+        <div className={styles.project}>
+            <h3 className={styles.title}>Elderly care platform</h3>
+            <p className={styles.description}>
+              On-demand elderly care provider using aggregated health workers.
+            </p>
+            <a className={styles.action} href="https://datatocare.org" target='_blank'>Visit</a>
+        </div>
+
+        <div className={styles.project}>
+            <h3 className={styles.title}>CV Maker</h3>
+            <p className={styles.description}>
+              Resume and cover letter generator for professionals.
+            </p>
+            <a className={styles.action} href="https://datatocare.org" target='_blank'>Visit</a>
+        </div>
+
+        <div className={`${styles.project} ${styles.wide}`}>
+            <h3 className={styles.title}>ThriftBox</h3>
+            <p className={styles.description}>
+              Core banking application for cooperative societies and credit unions
+            </p>
+            <a className={styles.action} href="https://datatocare.org" target='_blank'>Visit</a>
+        </div>
+      </section>
     </>
   );
 }

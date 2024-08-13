@@ -2,10 +2,10 @@
 .gridContainer {
   display: grid;
   border: none;
-  height: 100vh;
   min-height: calc(100vh - 20px);
-  width: 100vw;
+  height: 100vh;
   min-width: calc(100vw - 40px);
+  width: 100%;
   padding: 10px 20px;
   background-image: radial-gradient(#32325e, #1c1c4892);
 }
@@ -23,25 +23,46 @@
 }
 
 /* Nav menu ul lists */
-.gridContainer ul {
-  list-style-type: none;
+.mobileNav {
   font-size: 1.5rem;
-  color: #000;
-  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 20vh;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 20vh;
-  
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.gridContainer ul li {
+.mobileNavContainer li {
+  display: block;
+  color: #000;
+}
+
+.navContainer {
+  display: none;
+  width: 45%;
+}
+
+.nav {
   list-style-type: none;
+  font-size: 1.5rem;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav li {
+  list-style-type: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 200;
 }
 
 /* Main content area */
@@ -103,6 +124,55 @@
 .more {
   order: 5;
   justify-self: center;
+}
+
+/* Projects section */
+.projects {
+  display: grid;
+  justify-items: center;
+  width: 100vw;
+  font-weight: 300;
+  padding: 5em 0 0;
+}
+
+.project {
+  /* width: 85%; */
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  
+  background-color: white;
+  color: #000;
+  border-radius: 10px;
+  padding: 1em;
+  min-height: 300px;
+  justify-content: space-between;
+}
+
+.project .title {
+  text-decoration: underline;
+  font-size: 1.5rem;
+}
+
+.project .projectImage {
+  width: 300px;
+}
+
+.project .description {
+  font-size: 1rem;
+  font-weight: 200;
+  text-align: justify;
+}
+
+.project .action {
+  display: block;
+  width: 40%;
+  border: solid thin #32325e;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) - The styles above apply*/
@@ -178,9 +248,8 @@
   }
 }
 
-@media (min-width:600px) {
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-}
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+@media (min-width:600px) {}
 
 @media (min-width:800px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -191,34 +260,103 @@
     /* background-image: conic-gradient( #222231, #37374f); */
 
     background-image: conic-gradient(#1c1c4892, #32325e);
+    grid-template-rows: 5vh 15% 40% 15% 20% auto;
+  }
+
+  .menu,
+  .mobileNav {
+    display: none;
+  }
+
+  .navContainer {
+    display: block;
   }
 
   .lastName {
-    grid-column: 2 / 12;
+    grid-column: 1 / 12;
+    font-size: 8rem;
   }
 
   .image {
-    grid-column: 4 / 12;
+    grid-column: 3 / 12;
+    height: 400px;
+    width: 400px;
   }
 
   .firstName {
-    grid-column: 6 / 12;
+    grid-column: 5 / 12;
+    font-size: 10rem;
   }
   
   .introduction {
     grid-column: 2 / 11;
     font-size: 1.25em
   }
+
+  .projects {
+    width: 80%;
+    /* grid-template-columns: repeat(12, 1fr); */
+    /* grid-template-rows: repeat(2, 1fr); */
+    /* gap: 1rem; */
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
+    gap: 15px;
+    padding: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-flow: dense;
+    margin: 0 auto;
+  }
+
+  .project {
+    width: 100%;
+    margin: 0;
+  }
+
+  .long {
+    grid-row: span 2;
+  }
+
+  .wide {
+    grid-column: span 2;
+  }
+
+  .project:first-of-type .projectImage {
+    display: block;
+    width: 90%;
+    height: 60px;
+  }
+
+  /* .project:first-of-type {
+    grid-column: 1 / 7;
+  } */
+
+  
+
+  /* .project:nth-of-type(2) {
+    grid-column: 7 / 13;
+  } */
+
+  /* .project:nth-of-type(3) {
+    grid-column: 1 / 7;
+  }
+
+  .project:nth-of-type(4) {
+    grid-column: 7 / 13;
+  } */
 }
 
 /* landscape 800x480 phones (Android) */
 @media (min-width:800px) and (max-height:480px) {}
 
-
 /* big landscape tablets, laptops, and desktops */
 @media (min-width:1025px) {
+  .gridContainer {
+    grid-template-rows: 5vh 140px 350px 140px 140px auto;
+  }
+
   .lastName {
     font-size: 8rem;
+    grid-column: 2 / 12;
   }
 
   .image {
@@ -234,15 +372,38 @@
     position: relative;
     top: 50px;
   }
-}
 
-@media (min-width:1281px) {
-  /* hi-res laptops and desktops */
-  .menu {
-    display: none;
+  .projects {
+    width: 50%;
+    padding-top: 5rem;
+    margin: 0 auto;
   }
 
-  .gridContainer ul {
+  .project:first-of-type .projectImage {
+    width: 90%;
+    height: 100px;
+  }
+
+  .long {
+    grid-column: span 2;
+  }
+
+  .wide {
+    grid-column: span 3;
+  }
+}
+
+/* hi-res laptops and desktops */
+@media (min-width:1280px) {
+  .gridContainer {
+    grid-template-rows: 5vh 15% 30% 15% 15% auto;
+  }
+
+  .navContainer {
+    width: 30%;
+  }
+
+  .nav {
     position: initial;
     display: block;
     height: 100%;
@@ -252,46 +413,60 @@
     justify-self: end;
   }
 
-  .gridContainer ul li {
+  .nav li {
     display: inline-block;
     margin-right: 15px;
   }
 
-  .gridContainer ul li:last-of-type {
+  .nav li:last-of-type {
     margin-right: 0;
   }
 
   .introduction {
-    font-size: 1.7em;
+    font-size: 1.5em;
     grid-row: 6;
     grid-column: 3 / 10;
     align-self: start;
   }
 
   .more {
-    font-size: 2em;
+    font-size: 1.5em;
     align-self: end;
   }
 
   .image {
+    grid-column: 5 / 12;
     height: 400px;
     width: 400px;
     align-self: start;
-    box-shadow: 20px 20px 10px #9d9dad;
+    box-shadow: -10px 10px 5px #9d9dad;
     position: relative;
     top: 20px
   }
 
   .firstName {
-    grid-row: 5 / 6;
+    grid-row: 4 / 6;
+    grid-column: 7 / 12;
     align-self: end;
-    font-size: 15em;
-    
+    font-size: 14em;
+    line-height: 240px;
     position: relative;
-    top: 80px;
+    top: 20px;
   }
 
   .lastName {
-    grid-column: 3 / 12;
+    grid-column: 2 / 12;
+  }
+  
+  .middleName {
+    grid-column: 8 / 12;
+    text-shadow: -5px -5px 5px #000;
+    z-index: 5;
+    position: relative;
+    top: 50px;
+  }
+
+  .introduction {
+    font-size: 1.5rem;
   }
 }
