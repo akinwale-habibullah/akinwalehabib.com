@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Head from "next/head";
 import { DM_Sans } from "next/font/google";
 import { Menu, SquareChevronDown } from "lucide-react";
-import styles from "@/styles/Home1.module.css";
+import styles from "@/styles/Home.module.css";
 
 import image1 from '../../public/image1.jpeg';
 import DateToCare from '../../public/DataToCare.png';
