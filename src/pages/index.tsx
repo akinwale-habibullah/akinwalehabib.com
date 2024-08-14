@@ -82,7 +82,7 @@ export default function Home() {
 
                 <nav className={styles.mobileNav}> 
                   <ul>
-                    <li><a href="#">Projects</a></li>
+                    <li><a href="#projectssection">Projects</a></li>
                     <li><a href="#">Resume</a></li>
                     <li><a href="#">Courses</a></li>
                     <li><a href="#">Contact</a></li>
@@ -95,7 +95,7 @@ export default function Home() {
           <div className={styles.navContainer}>
             <nav className={styles.nav}> 
               <ul>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#projectssection">Projects</a></li>
                 <li><a href="#">Resume</a></li>
                 <li><a href="#">Courses</a></li>
                 <li><a href="#">Contact</a></li>
@@ -123,42 +123,63 @@ export default function Home() {
         <div className={`${styles.more}`}><SquareChevronDown /></div>
       </section>
 
-      <section className={`${styles.projects} ${dmSans.className}`}>
-        <div className={`${styles.project} ${styles.long}`}>
-            {/* <h3 className={styles.title}>DataToCare</h3> */}
-            <img
-              src={DateToCare.src}
-              alt="DataToCare product icon"
-              className={styles.projectImage} />
-            <p className={styles.description}>
-              DataToCare is a fully customizable suite of integrated applications that connects national laboratory networks by collecting diagnostic and patient data at the facility level, displaying real-time information on a dashboard to facilitate decision-making at the central level, and notifying test results to medical teams and patients.
-            </p>
-            <a className={styles.action} href="https://datatocare.org" target='_blank'>Visit</a>
-            
-        </div>
+      <section id='projectssection'>
+        <header>
+          <h3 className={`${styles.projectsHeader} ${dmSans.className}`}>Projects</h3>
+        </header>
 
-        <div className={styles.project}>
-            <h3 className={styles.title}>Elderly care platform</h3>
-            <p className={styles.description}>
-              On-demand elderly care provider using aggregated health workers.
-            </p>
-            <a className={styles.action} href="https://datatocare.org" target='_blank'>Visit</a>
-        </div>
+        <div className={`${styles.projects} ${dmSans.className}`}>
 
-        <div className={styles.project}>
-            <h3 className={styles.title}>CV Maker</h3>
-            <p className={styles.description}>
-              Resume and cover letter generator for professionals.
-            </p>
-            <a className={styles.action} href="https://datatocare.org" target='_blank'>Visit</a>
-        </div>
+          <div className={`${styles.project} ${styles.long}`}>
+              <img
+                src={DateToCare.src}
+                alt="DataToCare product icon"
+                className={styles.projectImage} />
+              <p className={styles.description}>
+                DataToCare is a fully customizable suite of integrated applications that connects national laboratory networks by collecting diagnostic and patient data at the facility level, displaying real-time information on a dashboard to facilitate decision-making at the central level, and notifying test results to medical teams and patients.
+              </p>
+              <a className={styles.action} href="https://datatocare.org">Visit</a>
+          </div>
 
-        <div className={`${styles.project} ${styles.wide}`}>
-            <h3 className={styles.title}>ThriftBox</h3>
-            <p className={styles.description}>
-              Core banking application for cooperative societies and credit unions
-            </p>
-            <a className={styles.action} href="https://datatocare.org" target='_blank'>Visit</a>
+          <div className={styles.project}>
+              <h3 className={styles.title}>Elderly care platform</h3>
+              <p className={styles.description}>
+                On-demand care provider for the elderly members of society.
+              </p>
+              <a className={styles.action} href="#">Visit</a>
+          </div>
+
+          <div className={styles.project}>
+              <h3 className={styles.title}>CV Maker</h3>
+              <p className={styles.description}>
+                Resume and cover letter generator for professionals.
+              </p>
+              <a className={styles.action} href="#">Visit</a>
+          </div>
+
+          <div className={`${styles.project}`}>
+              <h3 className={styles.title}>Crash Courses</h3>
+              <p className={styles.description}>
+                Succinct software development and engineering tutorials.
+              </p>
+              <a className={styles.action} href="https://crashcours.es" target='_blank'>Visit</a>
+          </div>
+          
+          <div className={`${styles.project} ${styles.wide}`}>
+              <h3 className={styles.title}>ThriftBox</h3>
+              <p className={styles.description}>
+                Core banking application service for cooperative societies and credit unions.
+              </p>
+              <a className={styles.action} href="#">Visit</a>
+          </div>
+
+          <div className={`${styles.project}`}>
+              <h3 className={styles.title}>Fund Pool</h3>
+              <p className={styles.description}>
+                Group shopping app for individuals.
+              </p>
+              <a className={styles.action} href="#">Visit</a>
+          </div>
         </div>
       </section>
     </>

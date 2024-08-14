@@ -87,7 +87,8 @@
 /* Name Text */
 .firstName,
 .middleName,
-.lastName {
+.lastName,
+.projectHeader {
   font-size: 3rem;
   font-weight: bold;
 }
@@ -132,11 +133,17 @@
   justify-items: center;
   width: 100vw;
   font-weight: 300;
-  padding: 5em 0 0;
+  padding: 3em 2em 0;
+}
+
+.projectsHeader {
+  text-align: center;
+  margin-top: 3rem;
+  font-weight: 300;
+  font-size: 3rem;
 }
 
 .project {
-  /* width: 85%; */
   display: flex;
   gap: 1em;
   flex-direction: column;
@@ -145,15 +152,14 @@
   
   background-color: white;
   color: #000;
-  border-radius: 10px;
   padding: 1em;
   min-height: 300px;
   justify-content: space-between;
 }
 
 .project .title {
-  text-decoration: underline;
   font-size: 1.5rem;
+  color: #32325e;
 }
 
 .project .projectImage {
@@ -295,11 +301,6 @@
 
   .projects {
     width: 80%;
-    /* grid-template-columns: repeat(12, 1fr); */
-    /* grid-template-rows: repeat(2, 1fr); */
-    /* gap: 1rem; */
-    /* padding-left: 1rem;
-    padding-right: 1rem; */
     gap: 15px;
     padding: 25px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -325,24 +326,6 @@
     width: 90%;
     height: 60px;
   }
-
-  /* .project:first-of-type {
-    grid-column: 1 / 7;
-  } */
-
-  
-
-  /* .project:nth-of-type(2) {
-    grid-column: 7 / 13;
-  } */
-
-  /* .project:nth-of-type(3) {
-    grid-column: 1 / 7;
-  }
-
-  .project:nth-of-type(4) {
-    grid-column: 7 / 13;
-  } */
 }
 
 /* landscape 800x480 phones (Android) */
@@ -389,7 +372,7 @@
   }
 
   .wide {
-    grid-column: span 3;
+    grid-column: span 2;
   }
 }
 
@@ -430,12 +413,12 @@
   }
 
   .more {
-    font-size: 1.5em;
     align-self: end;
   }
 
   .image {
     grid-column: 5 / 12;
+    grid-row: 3;
     height: 400px;
     width: 400px;
     align-self: start;
@@ -445,7 +428,7 @@
   }
 
   .firstName {
-    grid-row: 4 / 6;
+    grid-row: 5;
     grid-column: 7 / 12;
     align-self: end;
     font-size: 14em;
@@ -468,5 +451,9 @@
 
   .introduction {
     font-size: 1.5rem;
+  }
+
+  .project .description {
+    text-align: center;
   }
 }
