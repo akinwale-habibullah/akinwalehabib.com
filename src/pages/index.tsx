@@ -117,7 +117,7 @@ export default function Home() {
         <p className={`${styles.lastName}`}>Akinwale</p>
 
         <p className={`${styles.introduction}`} onClick={handleCloseMenu}>
-          I'm a <span><strong>Senior Software Engineer</strong> with experience in backend, web, and hybrid native applications. I have a foundation in ITIL, and i also possess technical project management skills.</span> Previously at <a href="https://www.savics.org" target="_blank">Savics</a>, <a href="https://www.andela.com" target="_blank">Andela</a>, and the <a href="https://www.aun.edu.ng" target="_blank">American University of Nigeria.</a>
+          I&apos;m a <span><strong>Senior Software Engineer</strong> with experience in backend, web, and hybrid native applications. I have a foundation in ITIL, and i also possess technical project management skills.</span> Previously at <a href="https://www.savics.org" target="_blank">Savics</a>, <a href="https://www.andela.com" target="_blank">Andela</a>, and the <a href="https://www.aun.edu.ng" target="_blank">American University of Nigeria.</a>
         </p>
 
         <div className={`${styles.more}`}><SquareChevronDown /></div>
