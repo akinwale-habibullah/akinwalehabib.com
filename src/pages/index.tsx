@@ -8,7 +8,7 @@ import {
   SiX,
   SiGoodreads
 } from '@icons-pack/react-simple-icons'
-import styles from "@/styles/home.module.css";
+import styles from "@/styles/Home.module.css";
 
 import image1 from '../../public/image1.jpeg';
 // import DateToCare from '../../public/DataToCare.png';
