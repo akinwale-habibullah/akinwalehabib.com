@@ -63,12 +63,12 @@ export default function Home() {
         </div> */}
       </section>
 
-      <section className='bg-[#1c1c4892] px-16 pt-16 pb-8'>
+      <section className='bg-[#1c1c4892] px-16 pt-16 pb-8 lg:px-80'>
         <header className='mb-8'>
           <h3 className='text-2xl'>Experience</h3>
         </header>
 
-        <div className='mb-8 flex flex-col md:flex-row '>
+        <div className='mb-8 flex flex-col md:flex-row'>
           <p className='uppercase text-sm text-slate-400 md:basis-2/6'>Nov 2023 - Dec 2023</p>
 
           <div className='md:basis-4/6'>
@@ -158,7 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='bg-[#1c1c4892] px-16 py-16'>
+      <section className='bg-[#1c1c4892] px-16 py-16 lg:px-80'>
         <header className='mb-8'>
           <h3 className='text-2xl'>Get In Touch</h3>
         </header>
